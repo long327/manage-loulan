@@ -1,0 +1,100 @@
+// base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+
+$bg:#f5f6fa;
+$dark_gray:#ccc;
+$light_gray:#fff;
+$primary_ligth: #f2f2fe;
+$primary:#7E7EF4;
+$primary_dark:#462798;
+$warning: #FFAA00;
+$err: #e42807;
+
+// sidebar
+$menuText:#7E7EF4;
+// $menuActiveText:#409EFF;
+$menuActiveText:#462798;
+$subMenuActiveText:#462798; // https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:#fff;
+$menuHover:#bebef9;
+
+$subMenuBg:#f2f2fe;
+$subMenuHover:#bebef9;
+
+$sideBarWidth: 210px;
+
+
+// oauth-color
+$twitter: rgb(10, 105, 248);
+$facebook:  rgb(0, 60, 255);
+$google: #f52516fd;
+$wechat_open: #24da70;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+}
+
+.sidebar-container ::v-deep {
+  i.el-icon-data-analysis,
+  i.el-icon-setting {
+    margin-right: 12px;
+  }
+  .el-menu--collapse i.el-icon-data-analysis {
+    padding:0 18px;
+  }
+}
+
+//the :hide youtube
+.isYoutube-authorized{
+  display: none!important;
+}
+
+/* 滚动条宽度 */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 10px;
+ }
+ /* 滚动条的滑块 */
+ ::-webkit-scrollbar-thumb {
+  background-color: #c0c4cc;
+  border-radius: 3px;
+ }
+
+
+::-moz-selection{
+  background:$primary;
+  color:$light_gray;
+}
+::selection{
+  background:$primary;
+  color:$light_gray;
+}
+::-webkit-selection{
+  background:$primary; 
+  color: $light_gray;
+}
+
+.main-container{
+  &{
+    min-width: 1200px;
+  }
+
+}
+

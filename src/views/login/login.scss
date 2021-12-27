@@ -1,0 +1,207 @@
+@import "../../styles/variables.scss";
+/* 修复input 背景不协调 和光标变色 */
+/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
+
+
+$font-gray:#aaa;
+$dark_gray:#ccc;
+$light_gray:#fff;
+$err:#f3213d;
+$cursor: #fff;
+
+
+/* reset element-ui css */
+.login-container ::v-deep  {
+  .el-input {
+    display: inline-block;
+    // height: 47px;
+
+    input {
+      border: none
+    }
+  }
+  
+
+  .el-form-item {
+    border: 1px solid $dark_gray;
+    // background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #454545;
+  }
+  .el-form-item:active,.el-form-item:hover{
+    border-color: $primary;
+  }
+}
+
+.login-container {
+  font-size:12px;
+  min-height: 100%;
+  width: 100%;
+  background-color: $bg;
+  overflow: hidden;
+
+  .box-wrapper {
+    width: 700px;
+    margin: 150px auto;
+    height: 500px;
+  }
+  .el-header {
+    min-height: 150px; 
+  }
+  .el-aside {
+    width:200px;
+    min-width: 200px;
+    background-image: url('../../assets/images/login-logo.png') ;
+    background-position: center 50px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 255px;
+  }
+  .el-main{
+      padding:30px 20px 20px 20px;
+      .tit {
+          color:$primary_dark;
+          height: 50px;
+          line-height: 50px;
+          font-size: 18px;
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: 15px;
+      }
+  }
+  .login-form {
+    position: relative;
+    max-width: 90%;
+    padding: 15px 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #d3d3f0;
+
+    .el-col {
+      font-size:12px;
+      color:$primary;
+      text-align: center;
+    }
+    .el-col:not(:last-child) {
+      border-right: 1px solid #aaa;
+    }
+    .link-button {
+        color: $primary_dark;
+        font-weight: normal;
+        padding: 0 5px;
+    }
+    .error {
+      color: $err ;
+    }
+    .el-divider__text {
+      font-weight: normal;
+      color: $font-gray;
+      font-size: 12px;
+    }
+    .icon {
+      color: #fff;
+      font-size: 24px;
+      margin-top: 4px;
+    }
+    .wx-svg-container,
+    .fb-svg-container,
+    .tt-svg-container,
+    .wb-svg-container,
+    .imp-svg-container {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      padding-top: 1px;
+      border-radius: 15px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .wx-svg-container {
+      background-color: #24da70;
+    }
+    .wb-svg-container {
+      background-color: orangered;
+    }
+    .fb-svg-container {
+      background-color: #1e69f5;
+    }
+    .tt-svg-container {
+      background-color: #475ee2d0;
+    }
+    .imp-svg-container {
+      background-color: #ba2922;
+    }
+  }
+
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .svg-container {
+    padding: 6px 5px 6px 15px;
+    color: $dark_gray;
+    vertical-align: middle;
+    width: 30px;
+    display: inline-block;
+  }
+
+  .title-container {
+    position: relative;
+
+    .title {
+      font-size: 26px;
+      color: $light_gray;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .thirdparty-button {
+    width: 35%;
+    margin-bottom: 30px;
+  }
+
+  @media only screen and (max-width: 470px) {
+    .thirdparty-button {
+      display: none;
+    }
+  }
+
+  // bind-dialog
+  .bind-dialog ::v-deep {
+    .el-dialog {
+      max-width: 400px;
+    }
+    .body{
+      text-align: center;
+    }
+    .el-icon-warning-outline {
+      color:$primary;
+      font-size: 40px;
+      width: 40px;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+/* 修复input 背景不协调 和光标变色 */
+/* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
+
+$bg:#f5f6fa;
+$dark_gray:#ccc;
+$light_gray:#fff;
+$primary:#7E7EF4;
+$cursor: #fff;
+
+// @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
+//   .login-container .el-input input {
+//     color: $cursor;
+//   }
+// }
+
+/* reset element-ui css */
+.login-container ::v-deep {
+  .el-input {
+    display: inline-block;
+    input {
+      border:0;
+    }
+  }
+  button {
+    margin-bottom: 10px!important;
+  }
+
+  .route-link {
+    font-size: 12px;
+    color: $primary;
+    text-align: center;
+    display: block;
+  }
+
+  .el-form-item {
+    border: 1px solid $dark_gray;
+    // background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #454545;
+  }
+  .el-form-item:active,.el-form-item:hover{
+    border-color: $primary;
+  }
+  
+  .agreement {
+    color: $primary;
+    cursor: pointer;
+  }
+  
+}
+
+.login-container {
+  min-height: 100%;
+  width: 100%;
+  background-color: $bg;
+  overflow: hidden;
+
+  .box-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 600px;
+  }
+  .el-header {
+    padding: 50px 0;
+    margin-bottom: 30px;
+  }
+  .el-main {
+    width: 800px;
+  //   border:red solid 1px;
+    margin:10px auto;
+  }
+  .reg-left {
+    background-image: url('../../assets/images/login-logo.png') ;
+    background-position: center 50px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 255px;
+  }
+  
+  .reg-form {
+    position: relative;
+    max-width: 90%;
+    padding: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #d3d3f0;
+  }
+
+  .tips {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    span {
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .title-container {
+    position: relative;
+
+    .title {
+      font-size: 26px;
+      color: $light_gray;
+      margin: 0px auto 40px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .show-pwd {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-size: 16px;
+    color: $dark_gray;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+// // .step-progress__wrapper ::v-deep .step-progress__wrapper-before {
+// //    border-top:solid 5px $bg;
+// //    border-bottom:solid 5px $bg;
+// // }
+// .step-progress__wrapper ::v-deep .step-progress__step:after {
+//   background-color: gray;
+//   height: 30px;
+//   width: 30px;
+//   border-width:15px
+  
+// }
+// .step-progress__wrapper ::v-deep span {
+//   color:#ccc;
+//   font-size: 16px;
+// }
+// .step-progress__wrapper ::v-deep .step-progress__step-label {
+//   font-size: 14px;
+//   font-weight: bold;
+// }
